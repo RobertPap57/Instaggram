@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instaggram</title>
+    <link rel="icon" type="image/x-icon" href="./img/icons/instagram.svg">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="fonts.css">
+    <script src="script.js"></script>
+</head>
+
+<body onload="render()">
+
+    <div id="new-post-container" class="new-post-container-bg d-none">
+        <img src="./img/icons/x-square.svg" onclick="closePost()" class="close-post-container"></img>
+        <div class="new-post-input-container">
+            <div class="new-post-header">
+                <span>Create new post</span>
+            </div>
+            <div class="new-post-main">
+                <div class="new-post-inputs">
+                    <input id="new-post-name" type="text" placeholder="Name">
+                    <input id="new-post-text" placeholder="Write new post..." type="text">
+                </div>
+                <img onclick="addNewPost()" src="./img/icons/send.svg" alt="">
+            </div>
+        </div>
+    </div>
+
+    <header>
+        <span>For you</span>
+        <div class="header-container">
+            <div class="header-search hide-after">
+                <img src="./img/icons/search.svg" alt="">
+                <span>Search</span>
+            </div>
+            <img src="./img/icons/heart.svg" alt="">
+            <img class="hide-before" src="./img/icons/send.svg" alt="">
+        </div>
+    </header>
+
+    <div>
+        <div class="leftnav">
+            <a href="./index.html">
+                <h1>Instaggram</h1>
+            </a>
+            <div class="nav-links">
+                <a class="home-link" href="./index.html">
+                    <img src="./img/icons/house-door-fill.svg" alt="">
+                    Home
+                </a>
+            </div>
+            <div class="nav-links">
+                <a href="#">
+                    <img src="./img/icons/search.svg" alt="">
+                    Search
+                </a>
+            </div>
+            <div class="nav-links">
+                <a href="#">
+                    <img src="./img/icons/compass.svg" alt="">
+                    Explore
+                </a>
+            </div>
+            <div class="nav-links">
+                <a href="#">
+                    <img src="./img/icons/play-btn.svg" alt="">
+                    Reel
+                </a>
+            </div>
+            <div class="nav-links">
+                <a href="#">
+                    <img src="./img/icons/send.svg" alt="">
+                    Messages
+                </a>
+            </div>
+            <div class="nav-links">
+                <a href="#">
+                    <img src="./img/icons/heart.svg" alt="">
+                    Notifications
+                </a>
+            </div>
+            <div onclick="openPost()" class="nav-links hovereffect">
+                <a href="#">
+                    <img src="./img/icons/plus-square.svg" alt="">
+                    Create
+                </a>
+            </div>
+            <div class="nav-links">
+                <a href="#">
+                    <img class="profile-icon" src="./img/profile/myProfile.png" alt="">
+                    Profile
+                </a>
+            </div>
+            <div class="nav-links bottom-position">
+                <a href="#">
+                    <img src="./img/icons/list.svg" alt="">
+                    More
+                </a>
+            </div>
+        </div>
+
+        <div class="mobile-leftnav">
+            <div class="insta-logo nav-links">
+                <a href="./index.html">
+                    <img src="./img/icons/instagram.svg" alt="">
+                </a>
+            </div>
+            <div class="nav-links">
+                <a class="home-link" href="./index.html">
+                    <img src="./img/icons/house-door-fill.svg" alt="">
+                </a>
+            </div>
+            <div class="nav-links">
+                <a href="#">
+                    <img src="./img/icons/search.svg" alt="">
+                </a>
+            </div>
+            <div class="nav-links">
+                <a href="#">
+                    <img src="./img/icons/compass.svg" alt="">
+                </a>
+            </div>
+            <div class="nav-links">
+                <a href="#">
+                    <img src="./img/icons/play-btn.svg" alt="">
+                </a>
+            </div>
+            <div class="nav-links">
+                <a href="#">
+                    <img src="./img/icons/send.svg" alt="">
+                </a>
+            </div>
+            <div class="nav-links">
+                <a href="#">
+                    <img src="./img/icons/heart.svg" alt="">
+                </a>
+            </div>
+            <div onclick="openPost()" class="nav-links hovereffect">
+                <a href="#">
+                    <img src="./img/icons/plus-square.svg" alt="">
+                </a>
+            </div>
+            <div class="nav-links">
+                <a href="#">
+                    <img class="profile-icon" src="./img/profile/myProfile.png" alt="">
+                </a>
+            </div>
+            <div class="nav-links bottom-position">
+                <a href="#">
+                    <img src="./img/icons/list.svg" alt="">
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="aot-section">
+        <div class="main-container">
+            <div class="top-container">
+                <span>For you</span>
+                <span>Following</span>
+            </div>
+            <div class="story-container">
+                <div class="profile-img">
+                    <img src="./img/profile/driftfestival.jpg" alt="">
+                    <span>DriftFestival</span>
+                </div>
+                <div class="profile-img">
+                    <img src="./img/profile/markus.png" alt="">
+                    <span>Markus</span>
+                </div>
+                <div class="profile-img">
+                    <img src="./img/profile/musclefoods.png" alt="">
+                    <span>MuscleMeals</span>
+                </div>
+            </div>
+            <div id="postcontainer"></div>
+        </div>
+
+        <div class="second-container">
+            <div class="myprofile">
+                <img class="border-line" src="./img/profile/myProfile.png" alt="">
+                <h2>Robert</h2>
+                <span>Switch</span>
+            </div>
+            <div class="suggestions">
+                <span>Suggested for you</span>
+                <span>See all</span>
+            </div>
+            <div class="myprofile">
+                <img src="./img/profile/coderakademie.png" alt="">
+                <h2>CoderAkademie</h2>
+                <span>Follow</span>
+            </div>
+            <div class="myprofile">
+                <img src="./img/profile/anonymous.jpg" alt="">
+                <h2>Anonymous</h2>
+                <span>Follow</span>
+            </div>
+            <div class="myprofile">
+                <img src="./img/profile/fastcars.jpg" alt="">
+                <h2>FastCars</h2>
+                <span>Follow</span>
+            </div>
+            <div class="myprofile">
+                <img src="./img/profile/driftdemon.jpg" alt="">
+                <h2>DriftDeamon</h2>
+                <span>Follow</span>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="nav-links">
+            <a class="home-link" href="./index.html">
+                <img src="./img/icons/house-door-fill.svg" alt="">
+            </a>
+        </div>
+        <div class="nav-links hide-before">
+            <a href="#">
+                <img src="./img/icons/search.svg" alt="">
+            </a>
+        </div>
+        <div class="nav-links hide-after">
+            <a href="#">
+                <img src="./img/icons/compass.svg" alt="">
+            </a>
+        </div>
+        <div class="nav-links hide-after">
+            <a href="#">
+                <img src="./img/icons/play-btn.svg" alt="">
+            </a>
+        </div>
+        <div onclick="openPost()" class="nav-links hovereffect">
+            <a href="#">
+                <img src="./img/icons/plus-square.svg" alt="">
+            </a>
+        </div>
+        <div class="nav-links hide-after">
+            <a href="#">
+                <img src="./img/icons/send.svg" alt="">
+            </a>
+        </div>
+        <div class="nav-links hide-before">
+            <a href="#">
+                <img src="./img/icons/play-btn.svg" alt="">
+            </a>
+        </div>
+        <div class="nav-links">
+            <a href="#">
+                <img class="profile-icon" src="./img/profile/myProfile.png" alt="">
+            </a>
+        </div>
+    </footer>
+
+</body>
+
+</html>
