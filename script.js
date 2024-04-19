@@ -83,8 +83,8 @@ function render() {
     postContainer.innerHTML = '';
     for (let i = 0; i < posts.length; i++) {
         const post = posts[i];
+        let commentsNr = post.comments.length;
         postContainer.innerHTML += loadPostHtml(post, commentsNr, i);
-        var commentsNr = post.comments.length;
         const likeClass = post.isLiked ? 'like-btn-red' : 'like-btn-hover';
         const likeSrc = post.isLiked ? './img/icons/heart-fill.svg' : './img/icons/heart.svg';
         const likeBtn = document.getElementById(`like-btn${i}`);
